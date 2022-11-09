@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PROD.Models.CAR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p style="font-size:15px;margin-left:1000px">
+    @Html.ActionLink("Profile", "Details")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Carid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PerDayCharge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChargePerKm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerDayCharge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChargePerKm)
+        </td>
+        <td>
+            @Html.ActionLink("Rent", "Rent")
+        </td>
+    </tr>
+}
+
+</table>
